@@ -14,8 +14,8 @@
                     {{$todo->description}}
                 </div>
             </div>
-            <a href="/todos/{{$todo->id}}/edit"  class="btn btn-success btn-sm my-2"> Edit Todo</a>
-
+            <a href="/todos/{{$todo->id}}/edit"  class="btn   btn-success  my-2"> Edit </a>
+            <a href="/todos/{{$todo->id}}/delete"  class="btn btn-danger my-2"> Delete</a>
         </div>
 
     </div>    

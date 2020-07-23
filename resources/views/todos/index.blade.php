@@ -3,19 +3,24 @@
    Todo List
 @endsection
 @section('content')
-    <h1 class ="text-center my-5" > Todos Pages 
+    <h1 class ="text-center my-5" > TODOS PAGES  
     </h1>
     <div class = " row justify-content-center">
         <div class = "col-md-8 ">
             <div class="card card-default">
                 <div class=" card-header  bg-primary">
-                    todos
+                   TODOS
                 </div>
                 <div class="card-body">
                     <ul class="list-group ">
                         @foreach ( $todos as $todo)
                             <li class="list-group-item">{{ $todo->name }}
-                                <a href="/todos/{{$todo->id}}" class = "btn btn-primary float-right">View</a>
+                                @if (!$todo->completed)
+                                     <a href="/todos/{{$todo->id}}/complete" style="" class = "btn btn-warning float-right ">Complete</a>
+                                @endif
+                               
+                                <a href="/todos/{{$todo->id}}" class = "btn btn-primary float-right mr-2">View</a>
+
                             </li>
                         @endforeach
                     </ul>

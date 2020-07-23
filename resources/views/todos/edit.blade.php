@@ -10,7 +10,7 @@
         <div class="col-md-8">
             <div class="card card-default">
                 <div class="card">
-                    <div class="card-header">Create New Todo </div>
+                    <div class="card-header">EDIT NEW TODO </div>
                     <div class="card-body">
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -23,18 +23,18 @@
                                 </ul>
                             </div>
                         @endif
-                        <form  action="/storeTodo" method="post">
+                        <form  action="/todos/{{$todo->id}}/update" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
-                                <input type="text" class="form-control" name="name"  placeholder="Enter Name">
+                            <input type="text" class="form-control" name="name" value="{{$todo->name}}"  placeholder="Enter Name">
                             </div>
                             <div class="form-group">
                                 <label for="">description</label>
-                                <textarea class="form-control"  name="description" id="" rows="3"> </textarea>
+                            <textarea class="form-control"  name="description" value="" rows="3"> {{$todo->description}}</textarea>
                             </div>
                             <div class="from-group text-center">
-                                <button  type="submit" class="btn btn-primary ">Create Todo</button>
+                                <button  type="submit" class="btn btn-primary ">Update Todo</button>
 
                             </div>
                         </form>
